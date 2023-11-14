@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #04AA6D;
+}
+</style>
+<body>
+
+<h1>JavaScript Progress Bar</h1>
+
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
+
+<br>
+
+<script>
+// Parse createdAt and deliverDate
+var createdAt = "Wed, Oct 18, 2023, 07:13:37 PM India Standard Time";
+var deliverDate = "Thu, Oct 18, 2023, 07:15:38 PM India Standard Time";
+
+// Calculate the total time difference in milliseconds
+var totalTime = deliverDate - createdAt;
+
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var id = setInterval(frame, 10);
+    function frame() {
+      var currentTime = new Date();
+      var elapsedTime = currentTime - createdAt;
+      var progress = (elapsedTime / totalTime) * 100;
+      if (progress >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        elem.style.width = progress + "%";
+      }
+    }
+  }
+}
+</script>
+
+<button onclick="move()">Start Progress</button>
+
+</body>
+</html>
