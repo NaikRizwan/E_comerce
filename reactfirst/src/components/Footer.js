@@ -33,9 +33,18 @@ const Footer = () => {
             <div className="footer-subscribe">
               <h3>Subscribe to get important updates</h3>
               <form action="#">
-                <input type="email" name="email" placeholder="YOUR E-MAIL" />
+                <input
+                  className="login_inputf"
+                  type="email"
+                  name="email"
+                  placeholder="YOUR E-MAIL"
+                />
 
-                <input type="submit" value="subscribe" />
+                <input
+                  className="login_buttonf"
+                  type="submit"
+                  value="subscribe"
+                />
               </form>
             </div>
             <div className="footer-social">
@@ -66,7 +75,7 @@ const Footer = () => {
 
           <div className="footer-bottom--section">
             <hr />
-            <div className="container grid grid-two-column ">
+            {/* <div className="container grid grid-two-column ">
               <p>
                 @{new Date().getFullYear()} Jamia Stationary. All Rights
                 Reserved
@@ -75,7 +84,11 @@ const Footer = () => {
                 <p>PRIVACY POLICY</p>
                 <p>TERMS & CONDITIONS</p>
               </div>
-            </div>
+            </div> */}
+            <p style={{ textAlign: "center" }}>
+              {" "}
+              @{new Date().getFullYear()} Jamia Stationary. All Rights Reserved
+            </p>
           </div>
         </footer>
       </Wrapper>
@@ -101,8 +114,8 @@ const Wrapper = styled.section`
     }
   }
   footer {
-    padding: 14rem 0 9rem 0;
-    background-color: ${({ theme }) => theme.colors.footer_bg};
+    padding: 14rem 0 1px 0;
+    background-color: #36454f;
     h3 {
       color: ${({ theme }) => theme.colors.hr};
       margin-bottom: 2.4rem;
@@ -145,7 +158,7 @@ const Wrapper = styled.section`
       }
     }
     footer {
-      padding: 9rem 0 9rem 0;
+      padding: 9rem 0 1px 0;
     }
     .footer-bottom--section {
       padding-top: 4.8rem;

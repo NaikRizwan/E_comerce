@@ -53,13 +53,7 @@ h1 {
   font-weight: 900;
 }
 
- h2 {
-   color: ${({ theme }) => theme.colors.heading};
-   font-size: 4.4rem;
-   font-weight: 300;
-   white-space: normal;
-  
-  }
+
 
 h3 {
   font-size: 1.8rem;
@@ -117,6 +111,9 @@ ${"" /* resuable code section  */}
 }
 .grid-seven-column{
   grid-template-columns: repeat(7, 1fr);
+  margin-left: 5%;
+  margin-right: 5%;
+  justify-items: center;
 }
 
   .common-heading {
@@ -143,32 +140,53 @@ ${"" /* resuable code section  */}
       font-size: 1.2rem;
       border-radius: 2rem;
     }
-
-input, textarea{
-    max-width: 50rem;
-    color: ${({ theme }) => theme.colors.black};
-    padding: 1.6rem 2.4rem;
-    border: 1px solid ${({ theme }) => theme.colors.border};
-    // text-transform: uppercase;
-   box-shadow: ${({ theme }) => theme.colors.shadowSupport};
-}
-    input[type="submit"]{
-    max-width: 16rem;
-    margin-top: 2rem;
-    background-color: ${({ theme }) => theme.colors.btn};
-    color: ${({ theme }) => theme.colors.white};
-    padding: 1.4rem 2.2rem;
-    border-style: solid;
-    border-width: .1rem;
-    // text-transform: uppercase;
-    font-size: 1.8rem;
-    cursor: pointer;
+    .login_buttonf {
+      background-color: #3498db;
+      color: #fff;
+      padding: 9px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
+    .login_buttonf:hover {
+      background-color: #2980b9; /* New background color on hover */
+    }
+    .login_inputf {
+      width: 70%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+// input, textarea{
+//     max-width: 50rem;
+//     color: ${({ theme }) => theme.colors.black};
+//     padding: 1.6rem 2.4rem;
+//     border: 1px solid ${({ theme }) => theme.colors.border};
+//     // text-transform: uppercase;
+//    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
+// }
+//     input[type="submit"]{
+//     max-width: 16rem;
+//     margin-top: 2rem;
+//     background-color: ${({ theme }) => theme.colors.btn};
+//     color: ${({ theme }) => theme.colors.white};
+//     padding: 1.4rem 2.2rem;
+//     border-style: solid;
+//     border-width: .1rem;
+//     // text-transform: uppercase;
+//     font-size: 1.8rem;
+//     cursor: pointer;
+  
+//     }
 
 @media (max-width: ${({ theme }) => theme.media.tab}) {
     .container {
     max-width: 130rem;
     padding: 0 3.2rem;
+  }
+  .animated-heart {
+    font-size: 1.9em;
   }
   }
 

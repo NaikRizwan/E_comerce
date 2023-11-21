@@ -33,6 +33,7 @@ const data = [
     image: "https://m.media-amazon.com/images/I/61PrR+rOStL._SL1100_.jpg",
     description:
       "Navneet Youva | Soft Bound Long Book | A4 Size - 21 Cm X 29.7 Cm | Rainbow Design Notebook For Students | Single Line | 172 Pages | Pack Of 6",
+
     category: "notebook",
   },
   {

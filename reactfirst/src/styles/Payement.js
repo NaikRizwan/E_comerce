@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import { useCartContext } from "./context/cart_context";
-import { Button } from "./styles/Button";
+import { useCartContext } from "../context/cart_context";
+import { Button } from "./Button";
 // import { useAuth } from './context/AuthContext';
 import { useNavigate } from "react-router-dom";
-import { RegistrationContainer } from "./Register";
-import { RegistrationForm } from "./Register";
-import { InputField } from "./Register";
+import { RegistrationContainer } from "../Myorder/Register";
+import { RegistrationForm } from "../Myorder/Register";
+import { InputField } from "../Myorder/Register";
 
-import { GridLeft } from "./Register";
-import { GridRight } from "./Register";
-import { useUser } from "./context/UserContext";
+import { GridLeft } from "../Myorder/Register";
+import { GridRight } from "../Myorder/Register";
+import { useUser } from "../context/UserContext";
 const Payement = () => {
   const { state } = useUser();
   const [isPaymentCompleted, setPaymentCompleted] = useState(false);

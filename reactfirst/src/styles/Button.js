@@ -10,6 +10,7 @@ export const Button = styled.button`
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
+  border-radius: 5px;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;

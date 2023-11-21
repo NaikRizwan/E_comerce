@@ -1,71 +1,73 @@
-import Header from "./components/Header";
+// import Header from "./components/Header";
 // import { useState } from "react";
 import React from "react";
-import {  Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-import About from "./About";
-import Home from "./Home";
-import Products from "./Products";
-import Contact from "./Contact";
- import Cart from "./Cart";
-import SingleProduct from "./SingleProduct";
+import About from "./Headers/About";
+import Home from "./Headers/Home";
+import Products from "./Headers/Products";
+import Contact from "./Headers/Contact";
+import Cart from "./Headers/Cart";
+import SingleProduct from "./Headers/SingleProduct";
 // import ErrorPage from "./ErrorPage";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 
 import Footer from "./components/Footer";
-import Login from "./Login";
-import Register from "./Register";
-// import Checkout from "./Checkout";
-import Payement from "./Payement";
-import CheckoutPage from "./CheckoutPage"
+import Login from "./Myorder/Login";
+import Register from "./Myorder/Register";
+import Checkout from "./Headers/Checkout";
+import Payement from "./styles/Payement";
+import CheckoutPage from "./Headers/CheckoutPage";
 // import RizwanForm from "./RizwanForm";
-import Profile from "./Profile";
+import Profile from "./Myorder/Profile";
 // import ProtectedRoute from "./ProtectedRoute";
 //import { useAuth } from './context/AuthContext';
-import MyOrder from "./MyOrder";
+import MyOrder from "./Myorder/MyOrder";
 import TrackPakage from "./components/TrackPakage";
-import Logout from "./Logout";
-import { intitialstate, reducer } from './reducer/UseReduucer';
+import Logout from "./Myorder/Logout";
+import { intitialstate, reducer } from "./reducer/UseReduucer";
 // import { useContext, useReducer } from "react";
-import { createContext, useReducer } from 'react';
-
-import { UserProvider} from './context/UserContext';
+import { createContext, useReducer } from "react";
+import Nav from "./components/Nav";
+import { UserProvider } from "./context/UserContext";
+import ProductForm from "./crud/ProductForm";
+import TrackOrder from "./Myorder/TrackOrder";
 export const UserConext = createContext();
 
-const Routing =()=>{
+const Routing = () => {
   return (
-<>
-
-<Routes>
+    <>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/prod" element={<ProductForm />} />
         {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="/payement" element= { <Payement />}/>
-        <Route path="/login" element= { <Login />}/>
+        <Route path="/payement" element={<Payement />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route path="/checkout" element={<Checkout />} /> */}
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/checkoutpage" element={<CheckoutPage />} />
         <Route path="/r" element={<TrackPakage />} />
+        <Route path="/or" element={<TrackOrder />} />
         <Route path="/myorder" element={<MyOrder />} />
         {/* <ProtectedRoute path="/p" component={Profile} /> */}
         {/* <Route path="/p" element={<Profile />} /> */}
         {/* <Route path="/p" element={isAuthenticated ? <Profile /> : <Navigate to="/login" />} /> */}
-        <Route path="/p" element={<Profile/>} />
+        <Route path="/p" element={<Profile />} />
         <Route path="/singleproduct/:id" element={<SingleProduct />} />
-        <Route path="/logout" element={<Logout/>} />
-       
+        <Route path="/logout" element={<Logout />} />
       </Routes>
-</>
-  )
+    </>
+  );
 };
 const App = () => {
   //const { isAuthenticated } = useAuth();
 
-  const [state1,dispatch1] = useReducer(reducer, intitialstate);
+  const [state1, dispatch1] = useReducer(reducer, intitialstate);
   const theme = {
     colors: {
       heading: "rgb(24 24 29)",
@@ -91,25 +93,23 @@ const App = () => {
     },
   };
 
-  
-
-
   return (
     <UserProvider>
-    <UserConext.Provider value={{state1 , dispatch1}}>
-    <ThemeProvider theme={theme}>
-      {/* <Router> */}
-        <GlobalStyle />
-        {/* {!isLoginPage && <Header />} */}
-        <Header />
-       
-        <Routing/>
-      
-        <Footer/>
-        {/* {!isLoginPage && <Footer />} */}
-      {/* </Router> */}
-    </ThemeProvider>
-    </UserConext.Provider>
+      <UserConext.Provider value={{ state1, dispatch1 }}>
+        <ThemeProvider theme={theme}>
+          {/* <Router> */}
+          <GlobalStyle />
+          {/* {!isLoginPage && <Header />} */}
+          {/* <Header /> */}
+          <Nav />
+
+          <Routing />
+
+          <Footer />
+          {/* {!isLoginPage && <Footer />} */}
+          {/* </Router> */}
+        </ThemeProvider>
+      </UserConext.Provider>
     </UserProvider>
   );
 };

@@ -191,7 +191,7 @@ import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 // const API = "https://api.pujakaitem.com/api/products";
-const API = "https://jamia.onrender.com/api/data";
+const API = "http://localhost:5000/api/data";
 // const API = "http://localhost:3001/api/data";
 // console.log("hello",API);
 const initialState = {

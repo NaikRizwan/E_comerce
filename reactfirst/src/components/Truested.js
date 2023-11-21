@@ -70,10 +70,13 @@ const Wrapper = styled.section`
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .brand-section-slider {
       margin-top: 3.2rem;
-      display: grid;
+      display: block;
       grid-template-columns: 1fr 1fr;
       /* background-color: red; */
       text-align: center;
+    }
+    .slide {
+      padding-bottom: 10px;
     }
   }
 `;
